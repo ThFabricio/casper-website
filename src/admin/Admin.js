@@ -1,6 +1,6 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import { firestore } from "../firebase/Config";
-import { collection, addDoc, getDocs, doc, deleteDoc } from "firebase/firestore";
+import { collection, getDocs, doc, deleteDoc } from "firebase/firestore";
 import { Link } from "react-router-dom";
 
 
@@ -11,6 +11,8 @@ const Admin = props => {
 
 
     const noticiasColletion = collection(firestore, 'noticias');
+
+
 
     useEffect(() => {
         const getNoticias = async () => {
@@ -23,6 +25,7 @@ const Admin = props => {
     async function deletarNoticia(id) {
         const noticiaDoc = doc(firestore, "noticias", id);
         await deleteDoc(noticiaDoc);
+
     }
 
 

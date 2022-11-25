@@ -21,6 +21,7 @@ const ViewNoticia = () => {
         }
         getNoticia();
     }, []);
+    
 
 
     return (
@@ -35,7 +36,7 @@ const ViewNoticia = () => {
                         </div>
 
                         <div class="col-md-6 mb-4">
-                            <span class="badge bg-danger px-2 py-1 shadow-1-strong mb-3">{noticia.categoria}</span>
+                            <span class="badge bg-danger px-3 py-2 shadow-2-strong mb-4">{noticia.categoria}</span>
                             <h4><strong>{noticia.titulo}</strong></h4>
                             <p class="text-muted">
                                 {noticia.descricao}
