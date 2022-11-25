@@ -36,7 +36,7 @@ const ViewNoticia = () => {
                         </div>
 
                         <div class="col-md-6 mb-4">
-                            <span class="badge bg-danger px-3 py-2 shadow-2-strong mb-4">{noticia.categoria}</span>
+                            <span class="badge bg-info px-3 py-2 shadow-2-strong mb-4">{noticia.categoria}</span>
                             <h4><strong>{noticia.titulo}</strong></h4>
                             <p class="text-muted">
                                 {noticia.descricao}

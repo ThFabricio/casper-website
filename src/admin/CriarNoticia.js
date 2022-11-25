@@ -15,8 +15,6 @@ const CriarNoticia = props => {
 
     const navigate = useNavigate();
 
-    
-
     const salvarNoticia = async (event) => {
         event.preventDefault();
 
@@ -75,6 +73,7 @@ const CriarNoticia = props => {
 
                 <br></br>
                 <button type="submit" className="btn btn-primary">Salvar</button>
+                <button className="btn btn-primary" onClick={() => navigate('/admin')}>Voltar</button>
             </form >
         </div>
     );

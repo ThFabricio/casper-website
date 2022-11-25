@@ -81,12 +81,11 @@ const EditarNoticias = () => {
                             </select>
                         </div>
                         <button type="submit" className="btn btn-primary">Atualizar</button>
+                        <button type="button" className="btn btn-danger" onClick={() => navigate('/admin')}>Cancelar</button>
                     </form>
 
                 </div>
             )}
-
-            <button className="btn btn-primary" onClick={() => navigate(-1)}>Voltar</button>
         </div>
     );
 };

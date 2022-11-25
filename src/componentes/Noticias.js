@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { firestore } from "../firebase/Config";
-import { collection,getDocs } from "firebase/firestore";
+import { collection, getDocs } from "firebase/firestore";
 import { Link } from "react-router-dom";
 
 const Noticias = props => {
@@ -28,8 +28,13 @@ const Noticias = props => {
                             <div className="card">
                                 <Link to={`/ver-noticia/${noticia.id}`}><img src={noticia.imagem} className="card-img-top" alt="..." style={{ height: "300px", objectFit: "cover" }} /></Link>
                                 <div className="card-body">
-                                    <h5 className="card-title">{noticia.titulo}</h5>
-                                    <p className="card-text">{noticia.descricao}</p>
+                                    <Link to={`/ver-noticia/${noticia.id}`} className="text-decoration-none text-dark">
+                                        <h5 className="card-title">{noticia.titulo}</h5>
+                                        <p className="card-text">
+                                            {noticia.descricao.slice(0, 200)}...
+                                            <span className="text-primary">Leia mais</span>
+                                        </p>
+                                    </Link>
                                     <p className="card-text"><small className="text-muted">{noticia.categoria}</small></p>
                                 </div>
                             </div>
