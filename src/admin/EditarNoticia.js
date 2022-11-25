@@ -80,7 +80,7 @@ const EditarNoticias = () => {
                                 <option value="Famosos">Famosos</option>
                             </select>
                         </div>
-                        <button type="submit" className="btn btn-primary">Atualizar</button>
+                        <button type="submit" className="btn btn-primary mx-3">Atualizar</button>
                         <button type="button" className="btn btn-danger" onClick={() => navigate('/admin')}>Cancelar</button>
                     </form>
 

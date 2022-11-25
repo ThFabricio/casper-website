@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { firestore } from "../firebase/Config";
 import { collection, getDocs, doc, deleteDoc } from "firebase/firestore";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 
 const Admin = props => {
@@ -12,7 +12,7 @@ const Admin = props => {
 
     const noticiasColletion = collection(firestore, 'noticias');
 
-
+    const navigate = useNavigate();
 
     useEffect(() => {
         const getNoticias = async () => {
@@ -25,7 +25,7 @@ const Admin = props => {
     async function deletarNoticia(id) {
         const noticiaDoc = doc(firestore, "noticias", id);
         await deleteDoc(noticiaDoc);
-
+        navigate(0);
     }
 
 
@@ -60,7 +60,7 @@ const Admin = props => {
                                         <td>{noticia.descricao}</td>
                                         <td><img src={noticia.imagem} alt="" width="100" /></td>
                                         <td>
-                                            <Link to={`/admin/editar-noticia/${noticia.id}`} className="btn btn-primary">Editar</Link>
+                                            <Link to={`/admin/editar-noticia/${noticia.id}`} className="btn btn-primary mx-3">Editar</Link>
                                             <button onClick={() => deletarNoticia(noticia.id)} className="btn btn-danger">Deletar</button>
                                         </td>
                                     </tr>

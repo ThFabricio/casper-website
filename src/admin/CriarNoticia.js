@@ -72,8 +72,8 @@ const CriarNoticia = props => {
                 </select>
 
                 <br></br>
-                <button type="submit" className="btn btn-primary">Salvar</button>
-                <button className="btn btn-primary" onClick={() => navigate('/admin')}>Voltar</button>
+                <button type="submit" className="btn btn-primary mx-3">Salvar</button>
+                <button className="btn btn-danger" onClick={() => navigate('/admin')}>Voltar</button>
             </form >
         </div>
     );
