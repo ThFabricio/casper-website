@@ -4,14 +4,26 @@ import { Link } from "react-router-dom";
 
 const Header = props => {
   return (
-    <nav className="navbar navbar-light bg-light">
-      <Link className="navbar-brand" to="/">
-        <img src={logo} width="30" height="30" className="d-inline-block align-top" alt="" />
+    <div>
+      <nav className="navbar navbar-light bg-light">
+        <Link className="navbar-brand" to="/">
+          <img src={logo} width="30" height="30" className="d-inline-block align-top" alt="" />
           Casper
-      </Link>
-      <Link className="navbar-brand" to="/admin">Admin</Link>
-    </nav>
-    );
+        </Link>
+
+        <div className="d-flex">
+          <div className="nav-item dropdown">
+            <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Area Administrativa
+            </a>
+            <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><Link className="dropdown-item" to="/admin">Noticias</Link></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+  );
 }
 
 export default Header;
