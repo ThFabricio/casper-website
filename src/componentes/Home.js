@@ -1,8 +1,9 @@
 import React from "react";
+import Noticias from "./Noticias";
 
 const Home = props => {
     return (
-       <div></div>
+        <Noticias />
     );
 };
 
