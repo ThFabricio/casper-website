@@ -2,11 +2,14 @@ import { useState, useEffect } from "react";
 import { firestore } from "../firebase/Config";
 import { collection, getDocs, doc, deleteDoc } from "firebase/firestore";
 import { Link, useNavigate } from "react-router-dom";
+import { auth } from "../firebase/Config";
+import { onAuthStateChanged } from "firebase/auth";
 
 
 const Admin = props => {
 
 
+    
     const [noticias, setNoticias] = useState([]);
 
 
@@ -27,16 +30,23 @@ const Admin = props => {
         await deleteDoc(noticiaDoc);
         navigate(0);
     }
-
+    
+    useEffect(() => {
+        onAuthStateChanged(auth, (user) => {
+            if (!user) {
+                navigate("/login");
+            }
+        });
+    }, [navigate]);
+    
 
     return (
         <div>
-
             <div className="container">
                 <div className="row">
                     <div className="col-12">
                         <h1>Noticias</h1>
-                        <Link to ="/admin/criar-noticia" className="btn btn-primary">Criar Noticia</Link>
+                        <Link to="/admin/criar-noticia" className="btn btn-primary">Criar Noticia</Link>
                     </div>
                 </div>
                 <div className="row">
@@ -73,8 +83,8 @@ const Admin = props => {
         </div>
     )
 }
-        
 
-            
+
+
 
 export default Admin;

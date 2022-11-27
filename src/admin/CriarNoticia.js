@@ -48,7 +48,7 @@ const CriarNoticia = props => {
             <form onSubmit={salvarNoticia}>
                 < div className="mb-3" >
                     <label htmlFor="exampleFormControlInput1" className="form-label">Titulo</label>
-                    <input type="email" className="form-control" id="titulo" value={titulo} onChange={e => setTitulo(e.target.value)} placeholder="Titulo da noticia" />
+                    <input type="text" className="form-control" id="titulo" value={titulo} onChange={e => setTitulo(e.target.value)} placeholder="Titulo da noticia" />
                 </div >
                 <div className="mb-3">
                     <label htmlFor="exampleFormControlTextarea1" className="form-label">Descrição</label>

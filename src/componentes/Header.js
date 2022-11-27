@@ -1,8 +1,23 @@
-import React from "react";
 import logo from "../logo.jpg";
 import { Link } from "react-router-dom";
+import { signOut } from "firebase/auth";
+import { auth } from "../firebase/Config";
+import { useNavigate } from "react-router-dom";
 
-const Header = props => {
+const Header = ({ user }) => {
+
+  const navigate = useNavigate();
+
+  const logout = async () => {
+    try {
+      await signOut(auth);
+      
+    } catch (error) {
+      console.log(error);
+    }
+    navigate('/');
+  }
+
   return (
     <div>
       <nav className="navbar navbar-light bg-light">
@@ -17,7 +32,15 @@ const Header = props => {
               Area Administrativa
             </a>
             <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><Link className="dropdown-item" to="/admin">Noticias</Link></li>
+              {user ? (
+                <>
+                  <li><Link className="dropdown-item" to="/admin">Admin</Link></li>
+                  <li><hr className="dropdown-divider" /></li>
+                  <li><button className="dropdown-item" onClick={logout}>Logout</button></li>
+                </>
+              ) : (
+                <li><Link className="dropdown-item" to="/login">Login</Link></li>
+              )}
             </ul>
           </div>
         </div>

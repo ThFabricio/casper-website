@@ -19,8 +19,8 @@ const Noticias = props => {
     }, []);
 
     return (
-        <div>
-            <div className="row row-cols-1 row-cols-md-3 g-4">
+        <div className="vh-100" style={{backgroundColor: "#508bfc"}}>
+            <div className="row row-cols-1 row-cols-md-3 g-4 mx-1 mt-1">
                 {noticias.map((noticia) => (
                     <div key={noticia.id}>
 

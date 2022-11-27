@@ -31,7 +31,7 @@ const ViewNoticia = () => {
                     <div class="row gx-5">
                         <div class="col-md-6 mb-4">
                             <div class="bg-image hover-overlay ripple shadow-2-strong rounded-5" data-mdb-ripple-color="light">
-                                <img src={noticia.imagem} class="img-fluid" height={750} width={750} />
+                                <img src={noticia.imagem} class="img-fluid mt-2" height={750} width={750} />
                             </div>
                         </div>
 
@@ -39,7 +39,7 @@ const ViewNoticia = () => {
                             <span class="badge bg-info px-3 py-2 shadow-2-strong mb-4">{noticia.categoria}</span>
                             <h4><strong>{noticia.titulo}</strong></h4>
                             <p class="text-muted">
-                                {noticia.descricao}
+                                <strong>{noticia.descricao}</strong>
                             </p>
                         </div>
                     </div>
